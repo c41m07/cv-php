@@ -110,7 +110,6 @@
 
                     echo "<p>" . nl2br(htmlspecialchars($row['niveau'])) . "</p>";
                     echo "</div>";
-
                 }
                 ?>
             </section>
