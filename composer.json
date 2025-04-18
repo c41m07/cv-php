@@ -1,0 +1,19 @@
+{
+  "name": "your-name/cv-php",
+  "description": "Mon CV en PHP",
+  "type": "project",
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/"
+    }
+  },
+  "require": {
+  },
+    "require-dev": {
+      "squizlabs/php_codesniffer": "3.*"
+    },
+  "config": {
+    "optimize-autoloader": true,
+    "sort-packages": true
+  }
+}

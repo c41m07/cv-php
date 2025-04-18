@@ -1,0 +1,431 @@
+:root {
+    --background-color: #121212;
+    --text-color: #e0e0e0;
+    --primary-color: #39ff14;
+    --secondary-color: #ff073a;
+    --nav-background: #1e1e1e;
+    --border-color: #333;
+    --hover-color: #2ecc71;
+
+    /* Surcharge des variables Bootstrap */
+    --bs-primary: var(--primary-color);
+    --bs-primary-rgb: 57, 255, 20;
+    --bs-secondary: var(--secondary-color);
+    --bs-secondary-rgb: 255, 7, 58;
+    --bs-dark: var(--nav-background);
+    --bs-dark-rgb: 30, 30, 30;
+    --bs-light: var(--background-color);
+    --bs-light-rgb: 18, 18, 18;
+    --bs-body-color: var(--text-color);
+    --bs-body-bg: var(--background-color);
+    --bs-border-color: var(--border-color);
+}
+
+/* Règles fondamentales de box-sizing */
+*,
+::before,
+::after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #000;
+    color: var(--primary-color);
+    font-family: "Lucida Console", Monaco, monospace, "Courier New", Courier;
+    font-weight: 400;
+    font-size: 1.25rem;
+    line-height: 1.5em;
+    text-align: center;
+    position: relative;
+    -webkit-text-size-adjust: 100%;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    padding-top: 60px; /* Ajustez cette valeur selon la hauteur de votre navbar */
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+/* Surcharge des styles de composants Bootstrap */
+.bg-primary {
+    background-color: var(--background-color) !important;
+}
+
+.bg-secondary {
+    background-color: var(--secondary-color) !important;
+}
+
+.bg-dark {
+    background-color: var(--nav-background) !important;
+}
+
+.bg-light {
+    background-color: var(--background-color) !important;
+    color: var(--text-color);
+}
+
+.bg-white {
+    background-color: #1e1e1e !important;
+    color: var(--text-color);
+}
+
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+.text-secondary {
+    color: var(--secondary-color) !important;
+}
+
+.text-light {
+    color: var(--text-color) !important;
+}
+
+.text-dark {
+    color: var(--text-color) !important;
+}
+
+.text-white {
+    color: var(--text-color) !important;
+}
+
+.text-muted {
+    color: var(--text-color) !important;
+    opacity: 0.8;
+}
+
+.border {
+    border-color: var(--border-color) !important;
+}
+
+.btn-primary {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    color: #000 !important;
+}
+
+.btn-primary:hover {
+    background-color: var(--hover-color) !important;
+    border-color: var(--hover-color) !important;
+}
+
+.btn-outline-primary {
+    color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color) !important;
+    color: #000 !important;
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color) !important;
+    border-color: var(--secondary-color) !important;
+    color: #fff !important;
+}
+
+.btn-outline-secondary {
+    color: var(--text-color) !important;
+    border-color: var(--border-color) !important;
+}
+
+.btn-outline-secondary:hover {
+    background-color: var(--border-color) !important;
+    color: var(--text-color) !important;
+}
+
+.card {
+    background-color: var(--nav-background) !important;
+    border-color: var(--border-color) !important;
+    color: var(--text-color);
+}
+
+.card-header, .card-footer {
+    background-color: rgba(0, 0, 0, 0.2) !important;
+    border-color: var(--border-color) !important;
+    color: var(--primary-color) !important;
+}
+
+.alert-info {
+    background-color: rgba(57, 255, 20, 0.1) !important;
+    color: var(--primary-color) !important;
+    border-color: rgba(57, 255, 20, 0.2) !important;
+}
+
+.form-control {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    border-color: var(--border-color) !important;
+    color: var(--text-color) !important;
+}
+
+.form-control:focus {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 0 0 0.25rem rgba(57, 255, 20, 0.25) !important;
+}
+
+.table {
+    color: var(--text-color) !important;
+}
+
+.table-light {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    color: var(--text-color) !important;
+}
+
+/* Ajout de nouvelles règles spécifiques pour le tableau */
+.table tbody td {
+    color: var(--text-color) !important;
+}
+
+.table-light th {
+    background-color: var(--nav-background) !important;
+    color: var(--text-color) !important;
+    border-color: var(--border-color) !important;
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    color: var(--text-color) !important;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.nav-link:hover {
+    color: var(--primary-color) !important;
+    text-shadow: 0 0 5px var(--primary-color);
+}
+
+.navbar-dark .navbar-nav .btn:hover {
+    color: var(--background-color) !important;
+}
+
+.input-group-text {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    border-color: var(--border-color) !important;
+    color: var(--text-color) !important;
+}
+
+/* Ajout de marges et alignements pour les sections */
+section {
+    margin: 40px 0;
+    /* Ajout de classe Bootstrap */
+    padding: 20px;
+}
+
+/* Nouvelle classe pour espacements supplémentaires */
+.section-spacing {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    /* Ajout de classe Bootstrap */
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+}
+
+button {
+    margin-top: 10px;
+    /* Ajout de classe Bootstrap */
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+img {
+    object-fit: cover;
+}
+
+/* Ajout de transition pour les éléments interactifs */
+.transition-hover {
+    transition: all 0.3s ease;
+}
+
+.transition-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+
+/*footer*/
+#footer {
+    background-color: var(--nav-background);
+    color: var(--text-color);
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-icons a {
+    margin: 0 10px;
+    color: var(--text-color);
+    transition: color 0.3s, transform 0.3s;
+}
+
+.footer-icons a:hover {
+    color: var(--primary-color); /* effet néon vert */
+    transform: scale(1.2);
+    text-shadow: 0 0 10px var(--primary-color);
+}
+
+.footer-quote {
+    color: var(--primary-color);
+    text-shadow: 0 0 5px var(--primary-color);
+}
+
+/* Améliorations pour l'interface d'administration */
+.table-row {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.table-hover tbody tr {
+    transition: all 0.3s ease;
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(57, 255, 20, 0.05) !important;
+    cursor: pointer;
+}
+
+.btn-warning {
+    background-color: #ffc107 !important;
+    border-color: #ffc107 !important;
+    color: #000 !important;
+}
+
+.btn-warning:hover {
+    background-color: #e0a800 !important;
+    border-color: #d39e00 !important;
+}
+
+.btn-danger {
+    background-color: var(--secondary-color) !important;
+    border-color: var(--secondary-color) !important;
+    color: #fff !important;
+}
+
+.btn-danger:hover {
+    background-color: #c9062f !important;
+    border-color: #bd062c !important;
+}
+
+/* Effet visuel pour les éléments de l'interface admin */
+.shadow-sm {
+    box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075) !important;
+}
+
+/* Animation pour les notifications */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.alert {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Amélioration de l'interface des formulaires */
+.form-control::placeholder {
+    color: rgba(224, 224, 224, 0.5);
+}
+
+textarea.form-control {
+    min-height: 150px;
+}
+
+/* Centrer le contenu de la section À propos */
+#a-propos,
+#a-propos .container {
+    text-align: center;
+}
+
+#a-propos p {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px; /* Limite la largeur du texte pour une meilleure lisibilité */
+}
+
+/* Centrage de la section intérêts */
+#Interets .card-body {
+    text-align: center;
+}
+
+#Interets h4 {
+    margin-bottom: 15px;
+}
+
+#Interets .row {
+    display: flex;
+    justify-content: center;
+}
+
+#Interets p {
+    margin: 0 auto;
+}
+
+/* Améliorations pour les cartes d'intérêts */
+#Interets .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    transition: all 0.3s ease;
+}
+
+#Interets .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(57, 255, 20, 0.15) !important;
+    border-color: var(--primary-color) !important;
+}
+
+.nav-section-container {
+    background-color: var(--nav-background);
+    border-radius: 12px;
+    padding: 1rem;
+}
+
+/* Style custom pour les onglets de section */
+.nav-pill-custom {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--text-color);
+    border-radius: 50px;
+    padding: 0.5rem 1.2rem;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+}
+
+.nav-pill-custom:hover {
+    background-color: var(--hover-color);
+    color: #000 !important;
+    box-shadow: 0 0 10px var(--hover-color);
+}
+
+.nav-pill-custom.active {
+    background-color: var(--primary-color) !important;
+    color: #000 !important;
+    font-weight: bold;
+    box-shadow: 0 0 15px var(--primary-color) !important;
+}
+
