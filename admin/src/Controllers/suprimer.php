@@ -1,4 +1,5 @@
 <?php
+
 require_once __DIR__ . '/../../../config/config.php';
 //tableau associatif pour les sections
 require_once __DIR__ . '/../../../config/sections.php';
@@ -24,4 +25,3 @@ if ($id) {
     echo "Erreur : ID non spécifié.";
     exit();
 }
-?>

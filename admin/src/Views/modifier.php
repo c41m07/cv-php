@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             //prepare la requête d'insertion
             $stmt = $pdo->prepare("UPDATE {$config['table']} SET $update WHERE id = :id");
-            
+
             //pour chaque champ de données, on lie la valeur à la requête préparée
             foreach ($data as $field => $value) {
                 $stmt->bindValue(":$field", $value);
