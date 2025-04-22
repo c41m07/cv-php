@@ -63,7 +63,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="col-lg-8">
             <div class="card shadow-sm border-0">
                 <div class="card-header bg-primary text-white">
-                    <h1 class="h3 mb-0"><i class="fas fa-plus-circle me-2"></i><?= htmlspecialchars($config['label']) ?></h1>
+                    <h1 class="h3 mb-0"><i class="fas fa-plus-circle me-2"></i><?= htmlspecialchars($config['label']) ?>
+                    </h1>
                 </div>
                 <div class="card-body p-4">
                     <?php if (!empty($error)) : ?>
@@ -81,12 +82,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <?php if ($field === 'debut' || $field === 'fin') : ?>
                                 <div class="mb-3">
                                     <label for="<?= $field ?>" class="form-label"><?= $label ?></label>
-                                    <input type="date" class="form-control" id="<?= $field ?>" name="<?= $field ?>" required>
+                                    <input type="date" class="form-control" id="<?= $field ?>" name="<?= $field ?>"
+                                           required>
                                 </div>
                             <?php elseif ($field === 'annee') : ?>
                                 <div class="mb-3">
                                     <label for="<?= $field ?>" class="form-label"><?= $label ?></label>
-                                    <input type="number" class="form-control" id="<?= $field ?>" name="<?= $field ?>" required>
+                                    <input type="number" class="form-control" id="<?= $field ?>" name="<?= $field ?>"
+                                           required>
                                 </div>
                             <?php elseif ($field === 'niveau') : ?>
                                 <div class="mb-3">
@@ -103,12 +106,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <?php elseif ($field === 'description') : ?>
                                 <div class="mb-3">
                                     <label for="<?= $field ?>" class="form-label"><?= $label ?></label>
-                                    <textarea class="form-control" id="<?= $field ?>" name="<?= $field ?>" rows="5" required></textarea>
+                                    <textarea class="form-control" id="<?= $field ?>" name="<?= $field ?>" rows="5"
+                                              required></textarea>
                                 </div>
                             <?php else : ?>
                                 <div class="mb-3">
                                     <label for="<?= $field ?>" class="form-label"><?= $label ?></label>
-                                    <input type="text" class="form-control" id="<?= $field ?>" name="<?= $field ?>" required>
+                                    <input type="text" class="form-control" id="<?= $field ?>" name="<?= $field ?>"
+                                           required>
                                 </div>
                             <?php endif; ?>
                         <?php endforeach; ?>
@@ -120,7 +125,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <button type="reset" class="btn btn-info">
                                 <i class="fas fa-eraser me-2"></i>Reset
                             </button>
-                            <a href="admin/dashboard.php?section=<?= htmlspecialchars($section) ?>" class="btn btn-secondary">
+                            <a href="admin/dashboard.php?section=<?= htmlspecialchars($section) ?>"
+                               class="btn btn-secondary">
                                 <i class="fas fa-arrow-left me-2"></i>Retour
                             </a>
                         </div>

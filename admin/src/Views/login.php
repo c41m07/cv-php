@@ -59,7 +59,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <label for="username" class="form-label">Identifiant</label>
                             <div class="input-group">
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
-                                <input type="text" id="username" name="username" class="form-control" placeholder="Votre identifiant" required>
+                                <input type="text" id="username" name="username" class="form-control"
+                                       placeholder="Votre identifiant" required>
                             </div>
                         </div>
 
@@ -67,7 +68,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <label for="password" class="form-label">Mot de passe</label>
                             <div class="input-group">
                                 <span class="input-group-text"><i class="fas fa-key"></i></span>
-                                <input type="password" id="password" name="password" class="form-control" placeholder="Votre mot de passe" required>
+                                <input type="password" id="password" name="password" class="form-control"
+                                       placeholder="Votre mot de passe" required>
                             </div>
                         </div>
 

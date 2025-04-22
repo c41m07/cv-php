@@ -31,7 +31,8 @@ require_once __DIR__ . '/config/config.php'; ?>
                 <li class="nav-item"><a class="nav-link text-light transition-hover" href="#Langues">Langues</a></li>
                 <li class="nav-item"><a class="nav-link text-light transition-hover" href="#Permis">Permis</a></li>
                 <li class="nav-item"><a class="nav-link text-light transition-hover" href="#Interets">Intérêts</a></li>
-                <li class="nav-item"><a class="nav-link text-light transition-hover btn btn-outline-primary ms-2" href="admin/dashboard.php">Admin</a>
+                <li class="nav-item"><a class="nav-link text-light transition-hover btn btn-outline-primary ms-2"
+                                        href="admin/dashboard.php">Admin</a>
                 </li>
             </ul>
         </div>
@@ -45,7 +46,8 @@ require_once __DIR__ . '/config/config.php'; ?>
             <div class="col-md-4 text-center mb-4 mb-md-0">
                 <div class="photo-container rounded-circle overflow-hidden mx-auto mb-3"
                      style="width: 200px; height: 200px; border: 3px solid var(--primary-color);">
-                    <img src="public/images/profil.jpg" alt="Photo de profil" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;">
+                    <img src="public/images/profil.jpg" alt="Photo de profil" class="img-fluid"
+                         style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
             </div>
             <div class="col-md-8">
