@@ -148,7 +148,12 @@ require_once __DIR__ . '/config/config.php'; ?>
                     echo "<div class='col-md-4 mb-3'>";
                     echo "<div class='card h-100 bg-dark transition-hover text-center'>";
                     echo "<div class='card-body d-flex flex-column align-items-center justify-content-center'>";
-                    echo "<h4 class='text-center'><i class='" . htmlspecialchars($row['icone']) . " me-2'></i>" . htmlspecialchars($row['nom']) . "</h4>";
+                    echo sprintf(
+                        "<h4 class='text-center'><i class='%s me-2'></i>%s</h4>",
+                        htmlspecialchars($row['icone']),
+                        htmlspecialchars($row['nom'])
+                    );
+//                    echo "<h4 class='text-center'><i class='" . htmlspecialchars($row['icone']) . " me-2'></i>" . htmlspecialchars($row['nom']) . "</h4>";
                     echo "<p class='text-center'>" . nl2br(htmlspecialchars($row['description'])) . "</p>";
                     echo "</div></div></div>";
                 }
@@ -167,7 +172,14 @@ require_once __DIR__ . '/config/config.php'; ?>
                     echo "<div class='col-md-4 mb-3'>";
                     echo "<div class='card h-100 bg-dark transition-hover text-center'>";
                     echo "<div class='card-body d-flex flex-column align-items-center justify-content-center'>";
-                    echo "<h4 class='text-center'><i class='" . htmlspecialchars($row['icone']) . " me-2'></i>" . htmlspecialchars($row['nom']) . "</h4>";
+                    echo sprintf(
+                        "<h4 class='text-center'><i class='%s me-2'></i>
+                            %s
+                            </h4>",
+                        htmlspecialchars($row['icone']),
+                        htmlspecialchars($row['nom'])
+                    );
+//                    echo "<h4 class='text-center'><i class='" . htmlspecialchars($row['icone']) . " me-2'></i>" . htmlspecialchars($row['nom']) . "</h4>";
                     echo "<p class='text-center'>" . nl2br(htmlspecialchars($row['niveau'])) . "</p>";
                     echo "</div></div></div>";
                 }
