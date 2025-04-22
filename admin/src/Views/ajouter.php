@@ -1,63 +1,8 @@
 <?php
+
 require_once __DIR__ . '/../../../config/config.php';
 //tableau associatif pour les sections ( nom de ta table sql,label de la section, les champs à remplir dans le formulaire)
-$sections = [
-    'diplomes' => [
-        'table' => 'diplomes',
-        'label' => 'Ajouter un diplôme',
-        'fields' => [
-            'intitule' => 'Intitulé',
-            'etablissement' => 'Établissement',
-            'annee' => 'Année',
-            'description' => 'Description',
-        ],
-    ],
-    'experiences' => [
-        'table' => 'experiences',
-        'label' => 'Ajouter une expérience',
-        'fields' => [
-            'poste' => 'Poste',
-            'entreprise' => 'Entreprise',
-            'description' => 'Description',
-            'debut' => 'Début',
-            'fin' => 'Fin',
-        ],
-    ],
-    'langues' => [
-        'table' => 'langues',
-        'label' => 'Ajouter une langue',
-        'fields' => [
-            'langue' => 'Langue',
-            'niveau' => 'Niveau',
-        ],
-    ],
-    'languages' => [
-        'table' => 'languages',
-        'label' => 'Ajouter un langage',
-        'fields' => [
-            'icone' => 'Icône',
-            'nom' => 'Nom',
-            'niveau' => 'Niveau',
-        ],
-    ],
-    'permis' => [
-        'table' => 'permis',
-        'label' => 'Ajouter un permis',
-        'fields' => [
-            'type' => 'Type',
-            'description' => 'Description',
-        ],
-    ],
-    'interets' => [
-        'table' => 'interets',
-        'label' => 'Ajouter un intérêt',
-        'fields' => [
-            'icone' => 'Icône',
-            'nom' => 'Nom',
-            'description' => 'Description',
-        ],
-    ],
-];
+require_once __DIR__ . '/../../../config/sections.php';
 
 //récupération paramètres section
 $section = $_GET['section'] ?? null;

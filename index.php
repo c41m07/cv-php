@@ -1,4 +1,5 @@
-<?php require_once __DIR__ . '/config/config.php'; ?>
+<?php global $pdo;
+require_once __DIR__ . '/config/config.php'; ?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -8,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV de Kévin</title>
     <meta name="description" content="CV de Kévin - développeur et technicien">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="public/css/style.css">
@@ -16,7 +18,9 @@
 <body class="bg-light text-light">
 <nav class="navbar navbar-expand-lg bg-dark border-bottom fixed-top shadow-sm">
     <div class="container">
-        <a class="navbar-brand text-primary transition-hover" href="#">CV de Kévin</a>
+        <a class="navbar-brand text-primary transition-hover" href="#">
+            <i class="fa-solid fa-book"></i>
+            CV de Kévin</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -41,7 +45,7 @@
             <div class="col-md-4 text-center mb-4 mb-md-0">
                 <div class="photo-container rounded-circle overflow-hidden mx-auto mb-3"
                      style="width: 200px; height: 200px; border: 3px solid var(--primary-color);">
-                    <img src="public/img/profile.jpg" alt="Photo de profil" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;">
+                    <img src="public/images/profil.jpg" alt="Photo de profil" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
             </div>
             <div class="col-md-8">

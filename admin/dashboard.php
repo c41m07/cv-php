@@ -1,4 +1,5 @@
 <?php
+
 require_once __DIR__ . '/../config/config.php';
 
 // Vérification de la connexion
@@ -124,11 +125,12 @@ $languages = $pdo->query('SELECT * FROM languages')->fetchAll();
                                         </td>
                                         <td>
                                             <div class="d-flex gap-2 justify-content-center">
-                                                <a href=""
+                                                <a href="admin/src/Views/modifier.php?section=experiences&id=<?= $experience['id'] ?>"
                                                    class="btn btn-sm btn-warning">Modifier</a>
-                                                <a href=""
+                                                <a href="admin/src/Controllers/suprimer.php?section=experiences&id=<?= $experience['id'] ?>"
                                                    class="btn btn-sm btn-danger"
-                                                   onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette expérience ?');">Supprimer</a>
+                                                   onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette expérience ?');">Supprimer
+                                                </a>
                                             </div>
                                         </td>
                                     </tr>
@@ -165,7 +167,7 @@ $languages = $pdo->query('SELECT * FROM languages')->fetchAll();
                             <tbody>
                             <?php if (empty($diplomes)) : ?>
                                 <tr>
-                                    <td colspan="5" class="text-center py-4">Aucune expérience disponible</td>
+                                    <td colspan="6" class="text-center py-4">Aucune expérience disponible</td>
                                 </tr>
                             <?php else : ?>
                                 <?php foreach ($diplomes as $diplome) : ?>
@@ -180,9 +182,9 @@ $languages = $pdo->query('SELECT * FROM languages')->fetchAll();
                                         <td><?= htmlspecialchars($diplome['description']) ?></td>
                                         <td>
                                             <div class="d-flex gap-2 justify-content-center">
-                                                <a href=""
+                                                <a href="admin/src/Views/modifier.php?section=diplomes&id=<?= $diplome['id'] ?>"
                                                    class="btn btn-sm btn-warning">Modifier</a>
-                                                <a href=""
+                                                <a href="admin/src/Controllers/suprimer.php?section=diplomes&id=<?= $diplome['id'] ?>"
                                                    class="btn btn-sm btn-danger"
                                                    onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette expérience ?');">Supprimer</a>
                                             </div>
@@ -219,7 +221,7 @@ $languages = $pdo->query('SELECT * FROM languages')->fetchAll();
                             <tbody>
                             <?php if (empty($langues)) : ?>
                                 <tr>
-                                    <td colspan="5" class="text-center py-4">Aucune expérience disponible</td>
+                                    <td colspan="6" class="text-center py-4">Aucune expérience disponible</td>
                                 </tr>
                             <?php else : ?>
                                 <?php foreach ($langues as $langue) : ?>
@@ -229,9 +231,9 @@ $languages = $pdo->query('SELECT * FROM languages')->fetchAll();
                                         <td><?= htmlspecialchars($langue['niveau']) ?></td>
                                         <td>
                                             <div class="d-flex gap-2 justify-content-center">
-                                                <a href=""
+                                                <a href="admin/src/Views/modifier.php?section=langues&id=<?= $langue['id'] ?>"
                                                    class="btn btn-sm btn-warning">Modifier</a>
-                                                <a href=""
+                                                <a href="admin/src/Controllers/suprimer.php?section=langues&id=<?= $langue['id'] ?>"
                                                    class="btn btn-sm btn-danger"
                                                    onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette expérience ?');">Supprimer</a>
                                             </div>
@@ -278,9 +280,9 @@ $languages = $pdo->query('SELECT * FROM languages')->fetchAll();
                                         <td><?= htmlspecialchars($permi['description']) ?></td>
                                         <td>
                                             <div class="d-flex gap-2 justify-content-center">
-                                                <a href=""
+                                                <a href="admin/src/Views/modifier.php?section=permis&id=<?= $permi['id'] ?>"
                                                    class="btn btn-sm btn-warning">Modifier</a>
-                                                <a href=""
+                                                <a href="admin/src/Controllers/suprimer.php?section=permis&id=<?= $permi['id'] ?>"
                                                    class="btn btn-sm btn-danger"
                                                    onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette expérience ?');">Supprimer</a>
                                             </div>
@@ -329,9 +331,9 @@ $languages = $pdo->query('SELECT * FROM languages')->fetchAll();
                                         <td><?= htmlspecialchars($interet['description']) ?></td>
                                         <td>
                                             <div class="d-flex gap-2 justify-content-center">
-                                                <a href=""
+                                                <a href="admin/src/Views/modifier.php?section=interets&id=<?= $interet['id'] ?>"
                                                    class="btn btn-sm btn-warning">Modifier</a>
-                                                <a href=""
+                                                <a href="admin/src/Controllers/suprimer.php?section=interets&id=<?= $interet['id'] ?>"
                                                    class="btn btn-sm btn-danger"
                                                    onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette expérience ?');">Supprimer</a>
                                             </div>
@@ -380,9 +382,9 @@ $languages = $pdo->query('SELECT * FROM languages')->fetchAll();
                                         <td><?= htmlspecialchars($language['niveau']) ?></td>
                                         <td>
                                             <div class="d-flex gap-2 justify-content-center">
-                                                <a href=""
+                                                <a href="admin/src/Views/modifier.php?section=languages&id=<?= $language['id'] ?>"
                                                    class="btn btn-sm btn-warning">Modifier</a>
-                                                <a href=""
+                                                <a href="admin/src/Controllers/suprimer.php?section=languages&id=<?= $language['id'] ?>"
                                                    class="btn btn-sm btn-danger"
                                                    onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette expérience ?');">Supprimer</a>
                                             </div>
