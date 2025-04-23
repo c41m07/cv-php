@@ -48,7 +48,7 @@ $languages = $pdo->query('SELECT * FROM languages')->fetchAll();
         <div class="card-body nav-section-container">
             <ul class="nav nav-pills justify-content-center flex-wrap gap-2">
                 <li class="nav-item">
-                    <a class="nav-link nav-pill-custom active" href="#experiences" data-bs-toggle="tab">
+                    <a class="nav-link nav-pill-custom active " href="#experiences" data-bs-toggle="tab">
                         <i class="fas fa-briefcase me-1"></i> Expériences
                     </a>
                 </li>

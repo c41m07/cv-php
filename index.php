@@ -1,5 +1,7 @@
-<?php global $pdo;
-require_once __DIR__ . '/config/config.php'; ?>
+<?php
+global $pdo;
+require_once __DIR__ . '/config/config.php';
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -9,194 +11,212 @@ require_once __DIR__ . '/config/config.php'; ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV de Kévin</title>
     <meta name="description" content="CV de Kévin - développeur et technicien">
+    <!-- Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <!-- Votre feuille de styles -->
     <link rel="stylesheet" href="public/css/style.css">
 </head>
 
 <body class="bg-light text-light">
-<nav class="navbar navbar-expand-lg bg-dark border-bottom fixed-top shadow-sm">
+
+<nav class="navbar navbar-expand-lg bg-dark border-bottom fixed-top shadow-sm no-print">
     <div class="container">
         <a class="navbar-brand text-primary transition-hover" href="#">
-            <i class="fa-solid fa-book"></i>
-            CV de Kévin</a>
+            <i class="fa-solid fa-book"></i> CV de Kévin
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link text-light transition-hover" href="#Diplome">Diplômes</a></li>
-                <li class="nav-item"><a class="nav-link text-light transition-hover" href="#Xp">Expérience</a></li>
-                <li class="nav-item"><a class="nav-link text-light transition-hover" href="#Langues">Langues</a></li>
-                <li class="nav-item"><a class="nav-link text-light transition-hover" href="#Permis">Permis</a></li>
-                <li class="nav-item"><a class="nav-link text-light transition-hover" href="#Interets">Intérêts</a></li>
-                <li class="nav-item"><a class="nav-link text-light transition-hover btn btn-outline-primary ms-2"
-                                        href="admin/dashboard.php">Admin</a>
+                <li class="nav-item"><a class="nav-link text-light" href="#Diplome">Diplômes</a></li>
+                <li class="nav-item"><a class="nav-link text-light" href="#Xp">Expérience</a></li>
+                <li class="nav-item"><a class="nav-link text-light" href="#Langues">Langues</a></li>
+                <li class="nav-item"><a class="nav-link text-light" href="#Permis">Permis</a></li>
+                <li class="nav-item"><a class="nav-link text-light" href="#Interets">Intérêts</a></li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-outline-primary ms-2" href="admin/dashboard.php">Admin</a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
 
-<main class="container mt-5 pt-5">
-    <!-- Section de présentation -->
-    <section id="Presentation" class="mb-5 card shadow-sm p-4 bg-dark border col-12">
-        <div class="row">
-            <div class="col-md-4 text-center mb-4 mb-md-0">
-                <div class="photo-container rounded-circle overflow-hidden mx-auto mb-3"
-                     style="width: 200px; height: 200px; border: 3px solid var(--primary-color);">
-                    <img src="public/images/profil.jpg" alt="Photo de profil" class="img-fluid"
-                         style="width: 100%; height: 100%; object-fit: cover;">
-                </div>
-            </div>
-            <div class="col-md-8">
-                <h1 class="text-primary">Présentation</h1>
-                <p class="text-light">
-                    Titulaire d'un BAC PRO en maintenance avec plus de 8 ans d'expérience en construction et production,
-                    je suis prêt à apporter mon savoir-faire à de nouveaux projets ambitieux.
-                </p>
-            </div>
-        </div>
-    </section>
-
+<div class="container mt-5 pt-5">
     <div class="row">
-        <div class="col-md-6">
-            <!-- Section Expérience professionnelle -->
-            <section id="Xp" class="mb-5 card shadow-sm p-4 bg-dark border h-100">
-                <h2 class="text-primary">Expérience professionnelle</h2>
-                <?php
-                $stmt = $pdo->query("SELECT * FROM experiences ORDER BY debut DESC");
-                while ($row = $stmt->fetch()) {
-                    echo "<div class='mb-4 border-bottom pb-3'>";
-                    echo "<h3>" . htmlspecialchars($row['poste']) . "</h3>";
-                    echo "<h4>" . htmlspecialchars($row['entreprise']) . "</h4>";
+        <!-- COLONNE GAUCHE -->
+        <div class="col-md-4">
+            <!-- Présentation -->
+            <section id="Presentation" class="mb-4">
+                <div class="card shadow-sm p-4 bg-dark border">
+                    <div class="text-center mb-3">
+                        <img src="public/images/profil.jpg" alt="Photo de profil"
+                             class="rounded-circle img-fluid profile-img">
+                    </div>
+                    <h2 class="text-primary">Présentation</h2>
+                    <p class="text-light">Titulaire d'un BAC PRO en maintenance avec plus de 8 ans d'expérience en
+                        construction et production, je suis prêt à apporter mon savoir-faire à de nouveaux projets
+                        ambitieux.</p>
+                </div>
+            </section>
 
-                    // Formatage des dates
-                    $debut = new DateTime($row['debut']);
-                    $fin = $row['fin'] ? new DateTime($row['fin']) : null;
-                    $periode = $debut->format('M Y') . ' - ';
-                    $periode .= $fin ? $fin->format('M Y') : 'Présent';
+            <!-- Intérêts avec icônes -->
+            <section id="Interets" class="mb-4">
+                <div class="card shadow-sm p-4 bg-dark border">
+                    <h2 class="text-primary">Centres d'intérêt</h2>
+                    <ul class="list-unstyled text-light">
+                        <?php
+                        $stmt = $pdo->query("SELECT * FROM interets");
+                        while ($row = $stmt->fetch()) {
+                            echo sprintf(
+                                '<li class="mb-2"><i class="%s me-2"></i> %s',
+                                htmlspecialchars($row['icone']),
+                                htmlspecialchars($row['nom']),
+                            );
+                            if (!empty($row['description'])) {
+                                echo ' <br> – <br>' . htmlspecialchars($row['description']);
+                            }
+                            echo '</li>';
+                        }
+                        ?>
+                    </ul>
+                </div>
+            </section>
 
-                    echo "<p class='text-muted'>" . $periode . "</p>";
-                    echo "<p>" . nl2br(htmlspecialchars($row['description'])) . "</p>";
-                    echo "</div>";
-                }
-                ?>
+            <!-- Langues parlées (barre et icônes) -->
+            <section id="Langues" class="mb-4">
+                <div class="card shadow-sm p-4 bg-dark border">
+                    <h2 class="text-primary">Langues</h2>
+                    <?php
+                    $mapLangues = ['Maternelle' => 100, 'Avancé' => 75, 'Intermédiaire' => 50, 'Débutant' => 25];
+                    $stmt = $pdo->query("SELECT * FROM langues ORDER BY FIELD(niveau,'Maternelle','Avancé','Intermédiaire','Débutant')");
+                    while ($row = $stmt->fetch()) {
+                        $pct = $mapLangues[$row['niveau']] ?? 0;
+                        ?>
+                        <div class="mb-3 d-flex align-items-center">
+                            <div class="flex-grow-1">
+                                <h5 class="text-light mb-1"><?= htmlspecialchars($row['langue']) ?></h5>
+                                <div class="progress">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width:<?= $pct ?>%;"
+                                         aria-valuenow="<?= $pct ?>" aria-valuemin="0" aria-valuemax="100"><?= $pct ?>%
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <?php } ?>
+                </div>
+            </section>
+
+            <!-- Permis -->
+            <section id="Permis" class="mb-4">
+                <div class="card shadow-sm p-4 bg-dark border">
+                    <h2 class="text-primary">Permis</h2>
+                    <ul class="list-unstyled text-light">
+                        <?php
+                        $stmt = $pdo->query("SELECT * FROM permis");
+                        while ($row = $stmt->fetch()) {
+                            echo '<li>' . htmlspecialchars($row['type']) . '</li>';
+                        }
+                        ?>
+                    </ul>
+                </div>
             </section>
         </div>
 
-        <div class="col-md-6">
-            <!-- Section Diplômes et formations -->
-            <section id="Diplome" class="mb-5 card shadow-sm p-4 bg-dark border h-100">
-                <h2 class="text-primary">Diplômes et formations</h2>
-                <?php
-                $stmt = $pdo->query("SELECT * FROM diplomes ORDER BY annee DESC");
-                while ($row = $stmt->fetch()) {
-                    echo "<div class='mb-4'>";
-                    echo "<h3>" . htmlspecialchars($row['intitule']) . "</h3>";
-                    echo "<h4>" . htmlspecialchars($row['etablissement']) . "</h4>";
-                    echo "<p class='text-muted'>" . htmlspecialchars($row['annee']) . "</p>";
-                    echo "<p>" . nl2br(htmlspecialchars($row['description'])) . "</p>";
-                    echo "</div>";
-                }
-                ?>
+        <!-- COLONNE DROITE -->
+        <div class="col-md-8">
+            <!-- Expérience -->
+            <section id="Xp" class="mb-4">
+                <div class="card shadow-sm p-4 bg-dark border">
+                    <h2 class="text-primary">Expérience professionnelle</h2>
+                    <?php
+                    $stmt = $pdo->query("SELECT * FROM experiences ORDER BY debut DESC");
+                    while ($row = $stmt->fetch()) {
+                        $d = new DateTime($row['debut']);
+                        $f = $row['fin'] ? new DateTime($row['fin']) : null;
+                        $periode = $d->format('M Y') . ' – ' . ($f ? $f->format('M Y') : 'Présent');
+                        ?>
+                        <div class="mb-4 border-bottom pb-3 text-light">
+                            <h4><?= htmlspecialchars($row['poste']) ?></h4>
+                            <h5 class="text-muted"> <?= htmlspecialchars($row['entreprise']) ?></h5>
+                            <small class="text-secondary"><strong><?= $periode ?></strong></small>
+                            <p class="mt-2"><?= nl2br(htmlspecialchars($row['description'])) ?></p>
+                        </div>
+                    <?php } ?>
+                </div>
             </section>
-        </div>
 
-        <div class="col-md-6">
-            <!-- Section Langues -->
-            <section id="Langues" class="mb-5 card shadow-sm p-4 bg-dark border h-100">
-                <h2 class="text-primary">Langues</h2>
-                <?php
-                $stmt = $pdo->query("SELECT * FROM langues ORDER BY niveau DESC");
-                while ($row = $stmt->fetch()) {
-                    echo "<div class='mb-3'>";
-                    echo "<h4>" . htmlspecialchars($row['langue']) . "</h4>";
-
-                    echo "<p>" . nl2br(htmlspecialchars($row['niveau'])) . "</p>";
-                    echo "</div>";
-                }
-                ?>
+            <!-- Diplômes -->
+            <section id="Diplome" class="mb-4">
+                <div class="card shadow-sm p-4 bg-dark border">
+                    <h2 class="text-primary">Diplômes & formations</h2>
+                    <?php
+                    $stmt = $pdo->query("SELECT * FROM diplomes ORDER BY annee DESC");
+                    while ($row = $stmt->fetch()) {
+                        ?>
+                        <div class="mb-4 text-light">
+                            <h4><?= htmlspecialchars($row['intitule']) ?></h4>
+                            <small class="text-secondary">
+                                <strong>
+                                    <?= sprintf(
+                                        '%s - %d',
+                                        htmlspecialchars($row['etablissement']),
+                                        htmlspecialchars($row['annee'])
+                                    ) ?>
+                                </strong>
+                            </small>
+                            <p class="mt-2"><?= nl2br(htmlspecialchars($row['description'])) ?></p>
+                        </div>
+                    <?php } ?>
+                </div>
             </section>
-        </div>
 
-        <div class="col-md-6">
-            <!-- Section Permis -->
-            <section id="Permis" class="mb-5 card shadow-sm p-4 bg-dark border h-100">
-                <h2 class="text-primary">Permis</h2>
-                <?php
-                $stmt = $pdo->query("SELECT * FROM permis");
-                while ($row = $stmt->fetch()) {
-                    echo "<div class='mb-3'>";
-                    echo "<h4>" . htmlspecialchars($row['type']) . "</h4>";
-                    echo "<p>" . nl2br(htmlspecialchars($row['description'])) . "</p>";
-                    echo "</div>";
-                }
-                ?>
-            </section>
-        </div>
+            <!-- Langages -->
+            <section id="language" class="mb-4">
+                <div class="card shadow-sm p-4 bg-dark border">
+                    <h2 class="text-primary">Langages</h2>
+                    <?php
+                    $mapCode = ['Avancé' => 100, 'Intermédiaire' => 66, 'Débutant' => 33];
+                    $stmt = $pdo->query("SELECT * FROM languages ORDER BY FIELD(niveau,'Avancé','Intermédiaire','Débutant')");
+                    while ($row = $stmt->fetch()) {
+                        $pct = $mapCode[$row['niveau']] ?? 0;
+                        ?>
+                        <div class="mb-3 d-flex align-items-center">
+                            <div class="flex-grow-1">
+                                <h5 class="text-light mb-1">
+                                    <?=
+                                    sprintf(
+                                        '<i class="%s fa-lg text-light me-2"></i> %s',
+                                        htmlspecialchars($row['icone']),
+                                        htmlspecialchars($row['nom']),
+                                    );
+                                    ?>
 
-        <div class="col-md-6">
-            <!-- Section Compétences -->
-            <section id="Interets" class="mb-5 card shadow-sm p-4 bg-dark border h-100 text-center">
-                <h2 class="text-primary">Centres d'intérêt</h2>
-                <?php
-                $stmt = $pdo->query("SELECT * FROM interets");
-                echo "<div class='row justify-content-center'>";
-                while ($row = $stmt->fetch()) {
-                    echo "<div class='col-md-4 mb-3'>";
-                    echo "<div class='card h-100 bg-dark transition-hover text-center'>";
-                    echo "<div class='card-body d-flex flex-column align-items-center justify-content-center'>";
-                    echo sprintf(
-                        "<h4 class='text-center'><i class='%s me-2'></i>%s</h4>",
-                        htmlspecialchars($row['icone']),
-                        htmlspecialchars($row['nom'])
-                    );
-//                    echo "<h4 class='text-center'><i class='" . htmlspecialchars($row['icone']) . " me-2'></i>" . htmlspecialchars($row['nom']) . "</h4>";
-                    echo "<p class='text-center'>" . nl2br(htmlspecialchars($row['description'])) . "</p>";
-                    echo "</div></div></div>";
-                }
-                echo "</div>";
-                ?>
-            </section>
-        </div>
-        <div class="col-md-6">
-            <!-- Section Loisirs -->
-            <section id="language" class="mb-5 card shadow-sm p-4 bg-dark border h-100 text-center">
-                <h2 class="text-primary">language</h2>
-                <?php
-                $stmt = $pdo->query("SELECT * FROM languages");
-                echo "<div class='row justify-content-center'>";
-                while ($row = $stmt->fetch()) {
-                    echo "<div class='col-md-4 mb-3'>";
-                    echo "<div class='card h-100 bg-dark transition-hover text-center'>";
-                    echo "<div class='card-body d-flex flex-column align-items-center justify-content-center'>";
-                    echo sprintf(
-                        "<h4 class='text-center'><i class='%s me-2'></i>
-                            %s
-                            </h4>",
-                        htmlspecialchars($row['icone']),
-                        htmlspecialchars($row['nom'])
-                    );
-//                    echo "<h4 class='text-center'><i class='" . htmlspecialchars($row['icone']) . " me-2'></i>" . htmlspecialchars($row['nom']) . "</h4>";
-                    echo "<p class='text-center'>" . nl2br(htmlspecialchars($row['niveau'])) . "</p>";
-                    echo "</div></div></div>";
-                }
-                echo "</div>";
-                ?>
+                                </h5>
+                                <div class="progress">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width:<?= $pct ?>%;"
+                                         aria-valuenow="<?= $pct ?>" aria-valuemin="0" aria-valuemax="100"><?= $pct ?>%
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <?php } ?>
+                </div>
             </section>
         </div>
     </div>
-</main>
+</div>
 
 <footer id="footer" class="py-4 mt-5">
     <div class="container">
         <div class="row">
             <div class="col-md-6 mb-3 mb-md-0">
                 <h5 class="text-primary">Contact</h5>
-                <p><i class="fas fa-envelope me-2"></i> test@exemple.com</p>
-                <p><i class="fas fa-phone me-2"></i> +33 X XX XX XX XX</p>
+                <p><i class="fas fa-envelope me-2"></i>test@exemple.com</p>
+                <p><i class="fas fa-phone me-2"></i>+33 X XX XX XX XX</p>
             </div>
             <div class="col-md-6">
                 <h5 class="text-primary">Suivez-moi</h5>
@@ -208,9 +228,8 @@ require_once __DIR__ . '/config/config.php'; ?>
             </div>
         </div>
         <hr class="my-4 border-secondary">
-        <p class="small text-muted mt-2">© <?= date('Y') ?> Kévin - Tous droits réservés</p>
+        <p class="small text-muted mt-2">© <?= date('Y') ?> Kévin – Tous droits réservés</p>
     </div>
-
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
