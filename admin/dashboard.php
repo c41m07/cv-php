@@ -1,6 +1,8 @@
 <?php
+session_start();
 
 require_once __DIR__ . '/../config/config.php';
+global $pdo;
 
 // Vérification de la connexion
 if (!($_SESSION['connecte'] ?? false)) {
@@ -173,7 +175,7 @@ $languages = $pdo->query('SELECT * FROM languages')->fetchAll();
                                 <?php foreach ($diplomes as $diplome) : ?>
                                     <tr class="transition-hover">
                                         <td><?= $diplome['id'] ?></td>
-                                        <td><?= htmlspecialchars($diplome['intitule']) ?></td>
+                                        <td><?= htmlspecialchars($diplome['intitule'] ?? '') ?></td>
                                         <td><?= htmlspecialchars($diplome['etablissement']) ?></td>
                                         <td>
 

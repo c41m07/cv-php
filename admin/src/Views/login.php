@@ -1,5 +1,7 @@
 <?php
-require_once __DIR__ . '/../../../config/config.php';
+session_start();             // à placer tout en haut, avant tout output
+require_once dirname(__DIR__, 3) . '/config/config.php';
+global $pdo;
 
 //traitement du formulaire de connexion
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -17,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['connecte'] = true;
         $_SESSION['username'] = $user['username'];
 
-        // Redirection avec chemin absolu
+        // Redirection vers le dashboard admin
         $redirect_url = BASE_URL . '/admin/dashboard.php';
         header('Location: ' . $redirect_url);
         exit();
