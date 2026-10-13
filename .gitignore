@@ -2,6 +2,14 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=phpstorm,composer,jetbrains
 config/*
 config/**
+mariadb/
+docker-compose.local.yaml
+
+# Variables d'environnement
+.env
+.env.*
+!.env.example
+
 ### Composer ###
 composer.phar
 /vendor/
